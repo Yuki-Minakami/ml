@@ -7,6 +7,14 @@ from PIL import Image
 
 # print("检测目标文件路径："+sys.argv[1])
 location_1 = sys.argv[1]
+# 正常文件结果集
+normal_results = []
+normal_results.append("normal\image0 name:zhangbozhi")
+normal_results.append("normal\image1 name:liudehua")
+normal_results.append("normal\image2 name:liuyifei")
+# 警告文件结果集
+warning_results = []
+warning_results.append("warning\image0 name:mayun")
 
 im = Image.open(location_1)
 
