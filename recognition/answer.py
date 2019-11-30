@@ -31,7 +31,7 @@ def rotate_bound(image, angle):
     # perform the actual rotation and return the image
     return cv2.warpAffine(image, M, (nW, nH))
 
-print("检测目标文件路径："+sys.argv[1])
+# print("检测目标文件路径："+sys.argv[1])
 location_1 = sys.argv[1]
 im = Image.open(location_1)
 size = im.size
