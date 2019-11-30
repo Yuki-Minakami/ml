@@ -49,6 +49,7 @@ normal_results = []
 normal_results.append("name:zhangbozhi")
 normal_results.append("name:liudehua")
 normal_results.append("name:liuyifei")
+normal_results.append("name:wenqiang")
 # 警告文件结果集
 warning_results = []
 warning_results.append("warning:mayun")
