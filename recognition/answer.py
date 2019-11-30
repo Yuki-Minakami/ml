@@ -46,12 +46,13 @@ if size[0] > 1000:
 
 # 正常文件结果集
 normal_results = []
-normal_results.append("normal\image0 name:zhangbozhi")
-normal_results.append("normal\image1 name:liudehua")
-normal_results.append("normal\image2 name:liuyifei")
+normal_results.append("name:zhangbozhi")
+normal_results.append("name:liudehua")
+normal_results.append("name:liuyifei")
 # 警告文件结果集
 warning_results = []
-warning_results.append("warning\image0 name:mayun")
+warning_results.append("warning:mayun")
+warning_results.append("warning:likai")
 
 i = 0
 normal_known_faces = []
@@ -100,14 +101,15 @@ face_locations = []
 face_encodings = []
 frame_number = 0
 
+faceResult = "Unknown"
+
 for frame in unknown_faces:
     # 获取人脸区域位置
     face_locations = face_recognition.face_locations(frame)
     # 对图片进行编码，获取128维特征向量
     face_encodings = face_recognition.face_encodings(frame, face_locations)
     if len(face_encodings) == 0:
-        print("Unknown")
-    faceResult = None
+        continue
     for face_encoding in face_encodings:
         result = None
         # 识别图片中人脸是否匹配已知图片
@@ -118,7 +120,6 @@ for frame in unknown_faces:
             if match:
                 result = warning_results[k]
                 faceResult = result
-                print(result)
                 break
             k = k + 1
 
@@ -129,9 +130,11 @@ for frame in unknown_faces:
                 if match:
                     result = normal_results[k]
                     faceResult = result
-                    print(result)
                     break
                 k = k + 1
 
     if faceResult != None:
         break
+
+
+print(faceResult)
