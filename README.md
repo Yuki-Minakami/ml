@@ -1,6 +1,6 @@
 ## 环境
- ### node.js 运行和启动web服务器
- ### python3 人脸识别核心
+ > node.js 运行和启动web服务器
+ > python3 人脸识别核心
  
 ## 运行
 
